@@ -11,7 +11,7 @@ export const addTask = async (req, res) => {
         return res.status(201).send({ newTask })
     
     } catch (error) {
-        errorHandler(error, req)
+        errorHandler(error, res)
     }
 }
 
@@ -24,7 +24,7 @@ export const removeTask = async (req, res) => {
         }
         return res.status(200).send({ message: "Task deleted" });
     } catch (error) {
-        errorHandler(error, req)
+        errorHandler(error, res)
     }
 }
 
@@ -37,7 +37,7 @@ export const updateTask = async (req, res) => {
         }
         return res.status(200).send({ updatedTask });
     } catch (error) {
-        errorHandler(error, req)
+        errorHandler(error, res)
     }
 }
 export const complateTask = async (req, res) => {
@@ -49,7 +49,7 @@ export const complateTask = async (req, res) => {
         }
         return res.status(200).send({ updatedTask });
     } catch (error) {
-        errorHandler(error, req)
+        errorHandler(error, res)
     }
 }
 
@@ -63,7 +63,7 @@ export const getTasks = async (req, res) => {
         const tasks = await Todo.find({ user_id: user._id });
         return res.status(200).send({ tasks });
     } catch (error) {
-        errorHandler(error, req);
+        errorHandler(error, res);
 
     }
 }
